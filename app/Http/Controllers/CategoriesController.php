@@ -12,12 +12,17 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function init_root ()
+    {
+        $root=Category::create(['name' => 'Fashion']);
+    }
+
     public function index()
     {
         //$root=Category::create(['name' => 'Fashion']);
         $categories=Category::all()->toHierarchy();
-        //dd($categories);
-        return view('admin.categories.index', compact('categories'));
+        return response()->json($categories);
+        //return view('admin.categories.index', compact('categories'));
     }
 
     /**
@@ -27,14 +32,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-
-
-/*        $root = Category::root();
-        $new = Category::create(['name' => 'Mens']);
-        $new->makeChildOf($root);*/
-
-        $categories=Category::all()->toHierarchy();
-        return view('admin.categories.create', compact('categories'));
+        //
     }
 
     /**
@@ -45,17 +43,7 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-
-
-        dd($request);
-        $root = Category::where('id', '=', $request->parent)->first();
-        $new = Category::create(['name' => $request->name,'path'=>$request->path]);
-        $new->makeChildOf($root);
-
-
-
-        return back()->with('success', 'Your category have been successfully created');
-        //dd($request);
+        //
     }
 
     /**

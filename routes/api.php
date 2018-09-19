@@ -25,11 +25,13 @@ Route::get('products','ProductController@index');
 
 Route::get('groups','GroupController@index');
 
+Route::get('categories','CategoriesController@index');
 
 
 
-Route::get('/earth/region/{id}','UserController@getRegion');
-Route::get('/earth/citys/{id}','UserController@getCitys');
+
+//Route::get('/earth/region/{id}','UserController@getRegion');
+//Route::get('/earth/citys/{id}','UserController@getCitys');
 
 
 
