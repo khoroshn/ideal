@@ -24,8 +24,8 @@ class GroupController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('Groups ');
+            $content->description('Add or edit Labels on products:  Name. background color, text color ');
 
             $content->body($this->grid());
         });
