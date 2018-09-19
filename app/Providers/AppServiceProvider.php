@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //admin config
-        Config::load();
+        //Config::load();
 
         //@set ($i,0)
         Blade::directive('set',function($exp){
