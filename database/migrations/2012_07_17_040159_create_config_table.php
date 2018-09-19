@@ -13,11 +13,7 @@ class CreateConfigTable extends Migration
      */
     public function up()
     {
-        $connection = config('admin.database.connection') ?: config('database.default');
-
-        $table = config('admin.extensions.config.table', 'admin_config');
-
-        Schema::connection($connection)->create($table, function (Blueprint $table) {
+        Schema::create('admin_config', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
             $table->string('value');
@@ -33,10 +29,6 @@ class CreateConfigTable extends Migration
      */
     public function down()
     {
-        $connection = config('admin.database.connection') ?: config('database.default');
-
-        $table = config('admin.extensions.config.table', 'admin_config');
-
-        Schema::connection($connection)->dropIfExists($table);
+        Schema::dropIfExists('admin_config');
     }
 }
