@@ -89,7 +89,7 @@ class ProductController extends SiteController
     public function product($id)
     {
         $item = Product::where('id', $id)->get();
-        $item->load('images','colors','sizes','groups');
+        $item->load('images','colors','sizes','groups','categories');
         return response()->json($item);
 
     }

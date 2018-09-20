@@ -25,7 +25,7 @@
                 </div>
               </div>
               <div class="py-2">
-                <p class="text-muted text-sm mb-1">Accessories</p>
+                <p class="text-muted text-sm mb-1">{{ $item->categories[0]->name }}</p>
                 <h3 class="h6 text-uppercase mb-1"><a href="detail.html" class="text-dark">{{ $item->name }}</a></h3><span class="text-muted">$40.00</span>
               </div>
             </div>
