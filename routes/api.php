@@ -19,13 +19,19 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 //Route::resource('blog','BlogController');
-Route::get('products/{id}','ProductController@product');
+Route::get('product/{id}','ProductController@product');
 
 Route::get('products','ProductController@index');
 
-Route::get('groups','GroupController@index');
-
 Route::get('categories','CategoriesController@index');
+
+Route::get('categories/{name}','CategoriesController@categories');
+
+Route::get('categories/branch/{name}','CategoriesController@branch');
+
+
+
+Route::get('groups','GroupController@index');
 
 
 

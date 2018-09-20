@@ -20,13 +20,7 @@ class ProductController extends SiteController
         $this->template = env('THEME').'.products.index';
     }
 
-/*    public function index()
-    {
-     $products=Product::all();
-
-        return view('theme.products.indexR',compact('products'));
-    }*/
-
+    //Api or React get all products
     public function index()
     {
         $products=Product::all();
@@ -40,14 +34,14 @@ class ProductController extends SiteController
     public function create()
     {
         //Category::create(['name' => 'Root category']);
-        $categories=Category::all()->toHierarchy();
-        return view('admin.products.create', compact('categories'));
+        //$categories=Category::all()->toHierarchy();
+        //return view('admin.products.create', compact('categories'));
     }
 
     public function store(Request $request)
     {
 
-        dd($request);
+/*        dd($request);
         $formInput = $request->except(['images', 'categories']);
 
         $this->validate($request, [
@@ -81,7 +75,7 @@ class ProductController extends SiteController
         $product->categories()->attach($category);
 
 
-        return back()->with('success', 'Your items have been successfully added');
+        return back()->with('success', 'Your items have been successfully added');*/
     }
 
     public function showProducts(){
@@ -102,7 +96,7 @@ class ProductController extends SiteController
 
     public function show($alias)
     {
-        $item = Product::where('alias', $alias)->get();
+/*        $item = Product::where('alias', $alias)->get();
         $item->load('images','colors','sizes','groups');
 
         $content = $item;
@@ -116,7 +110,7 @@ class ProductController extends SiteController
         $this->meta_desc = 'Ideal';
         $this->title = 'Ideal';
 
-        return $this->renderOut();
+        return $this->renderOut();*/
 
     }
 

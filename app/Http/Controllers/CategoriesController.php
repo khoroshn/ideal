@@ -20,39 +20,52 @@ class CategoriesController extends Controller
 
     public function index()
     {
-        //$root=Category::create(['name' => 'Fashion']);
+
         $categories=Category::all()->toHierarchy();
         return response()->json($categories);
         //return view('admin.categories.index', compact('categories'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+
+       public function category($name)
+    {
+
+        $categories = Category::where('name', '=', $name)->first(['created_at']);
+
+        if($categories){
+
+        } else {
+            $categories = "Category name not found!";
+        }
+
+        return response()->json($categories);
+
+    }
+
+    public function branch ($name = "Fashion"){
+        $branch = Category::where('name', '=', $name)->first();
+
+        if($branch){
+            $branch =  $branch->getDescendantsAndSelf()->toHierarchy();
+        } else {
+            $branch = "Category name not found!";
+        }
+        return response()->json($branch);
+    }
+
+
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
