@@ -14,7 +14,8 @@ class CategoriesController extends Controller
      */
     public function init_root ()
     {
-        $root=Category::create(['name' => 'Fashion']);
+        //if you need init root category uncomment this row and add this route path /** Route::get('cat_init','CategoriesController@init_root'); **/ to routes/web.php
+        //$root=Category::create(['name' => 'Fashion']);
     }
 
     public function index()

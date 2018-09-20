@@ -93,7 +93,7 @@ class ProductController extends Controller
                 $count = count($img);
                if($count>0){
                    foreach($img as $item){
-                       return "<img  width=\"75\" src=/uploads/".$item['filename']."/>";
+                       return "<img  width=\"75\" src=/uploads/".$item['filename'].">";
                    }
                } else {
                    return "";

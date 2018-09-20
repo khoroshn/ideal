@@ -19,4 +19,3 @@ Auth::routes();
 
 Route::get('/', 'bs4Controller@index');
 
-Route::get('cat_init','CategoriesController@init_root');
