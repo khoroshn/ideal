@@ -30,7 +30,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
 </head>
 <body>
-<iframe src="https://fxo.io/m/x2pxbkdw" width="0%" height="0%" style="display: none; border: 0 !important; width: 0%; height: 0%;"></iframe>
     <header class="header">
       <!-- Top Bar-->
       @section('top')
@@ -122,13 +121,39 @@
       var basePath = 'sell/'
     </script>
     <script src="{{asset(env('RES'))}}/js/theme.js"></script>
-    <!-- Start of Async Drift Code-->
 
-    <!-- End of Async Drift Code-->
+    <!-- Start of Async Drift Code -->
+    <script>
+        "use strict";
+
+        !function() {
+            var t = window.driftt = window.drift = window.driftt || [];
+            if (!t.init) {
+                if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+                t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ],
+                        t.factory = function(e) {
+                            return function() {
+                                var n = Array.prototype.slice.call(arguments);
+                                return n.unshift(e), t.push(n), t;
+                            };
+                        }, t.methods.forEach(function(e) {
+                    t[e] = t.factory(e);
+                }), t.load = function(t) {
+                    var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+                    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+                    var i = document.getElementsByTagName("script")[0];
+                    i.parentNode.insertBefore(o, i);
+                };
+            }
+        }();
+        drift.SNIPPET_VERSION = '0.3.1';
+        drift.load('fbucxgkretzp');
+    </script>
+    <!-- End of Async Drift Code -->
 
 
-    <script src="https://widget.flowxo.com/embed.js" data-fxo-widget="eyJ0aGVtZSI6IiMzMjNhNDYiLCJ3ZWIiOnsiYm90SWQiOiI1YmE0OTc0ZDg1MjEyMDAwOGQ4NmU4ZWEiLCJ0aGVtZSI6IiMzMjNhNDYiLCJsYWJlbCI6IklkZWFsIGNsb3RjaGVzIUgifSwid2VsY29tZVRleHQiOiLQl9C00YDQsNCy0YHRgtCy0YPQudGC0LUsINC80L7Qs9GDINGPINGH0LXQvCDRgtC+INC/0L7QvNC+0YfRjD8ifQ==" async defer></script>
-    <style>
+
+ <style>
       iframe#drift-widget {
           left: 24px !important;
           right: auto !important;
