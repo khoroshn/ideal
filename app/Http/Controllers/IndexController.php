@@ -14,7 +14,7 @@ class IndexController extends SiteController
     
     //work in the 'theme' on THEME settings environment
     
-    public function __construct(SliderRepository $s_rep, ProductRepository $sale_rep)
+    public function __construct(SliderRepository $s_rep, ProductRepository $sale_rep){
             $this->sale_rep = $sale_rep;
             $this->s_rep = $s_rep;
             $this->template = env('THEME').'.index';

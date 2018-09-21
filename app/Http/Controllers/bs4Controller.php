@@ -22,6 +22,9 @@ class bs4Controller extends Controller
         $grouped->load('groups');
         $grouped->load('images');
 	    
-	return view(env('THEME').'.index')->with('grouped', $grouped);
+	return view(env('THEME').'.index')
+        ->with('grouped', $grouped)
+        ->with('categories', $categories);
+
     }
 }

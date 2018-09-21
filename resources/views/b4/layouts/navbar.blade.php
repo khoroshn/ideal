@@ -1,3 +1,25 @@
+@if($categories)
+  <nav class="navbar navbar-expand-lg navbar-sticky navbar-airy navbar-dark bg-gray-900 bg-fixed-gray-900 py-2 border-top px-3">
+    <div class="container-fluid">
+      <!-- Navbar Header  -->
+      <a href="index.html" class="navbar-brand">
+        <div class="font-weight-bold text-uppercase text-lg text-dark mb-3">Sell<span class="text-primary">.</span></div>
+      </a>
+      <button type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+      <!-- Navbar Collapse -->
+      <div id="navbarCollapse" class="collapse navbar-collapse">
+        <ul class="navbar-nav mx-auto">
+            @include(env('THEME').'.nav.recgen', ['categories' => $categories])
+        </ul>
+      </div>
+    </div>
+  </nav>
+@endif
+
+{{--
+
+
+
 <!-- Navbar-->
       <nav class="navbar navbar-expand-lg navbar-sticky navbar-airy navbar-dark bg-gray-900 bg-fixed-gray-900 py-2 border-top px-3">
         <div class="container-fluid">  
@@ -255,4 +277,4 @@
           </div>
         </div>
       </nav>
-      <!-- /Navbar -->
+      <!-- /Navbar -->--}}

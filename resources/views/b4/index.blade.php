@@ -9,8 +9,8 @@
 
 @section('navbar')
     @parent
-	
-	@include(env('THEME').'.layouts.navbar')
+
+	@include(env('THEME').'.layouts.navbar', $categories)
 
 @endsection
 
