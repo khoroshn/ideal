@@ -19,3 +19,9 @@ Auth::routes();
 
 Route::get('/', 'bs4Controller@index');
 
+
+Route::get('check-queue', function(){
+    Mail::to('horosh3D@gmail.com')->send(new TestMail());
+    return 'Working';
+});
+
