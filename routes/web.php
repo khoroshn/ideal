@@ -1,5 +1,8 @@
 <?php
 
+use App\Mail\TestMail;
+use Illuminate\Support\Facades\Mail;
+
 //One page app START
 
 
@@ -21,7 +24,7 @@ Route::get('/', 'bs4Controller@index');
 
 
 Route::get('check-queue', function(){
-    Mail::to('horosh3D@gmail.com')->send(new TestMail());
+    Mail::to('adm@ideal.com')->send(new TestMail());
     return 'Working';
 });
 
