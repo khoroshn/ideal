@@ -147,6 +147,9 @@
 
     </script>
     <!-- End of Async Drift Code-->
+
+{{--    <iframe src="https://fxo.io/m/x2pxbkdw" width="100%" height="100%" style="border: 3px solid #f9f9fb; width: 100%; height: 100%;"></iframe>--}}
+    <script src="https://widget.flowxo.com/embed.js" data-fxo-widget="eyJ0aGVtZSI6IiMzMjNhNDYiLCJ3ZWIiOnsiYm90SWQiOiI1YmE0OTc0ZDg1MjEyMDAwOGQ4NmU4ZWEiLCJ0aGVtZSI6IiMzMjNhNDYiLCJsYWJlbCI6IklkZWFsIGNsb3RjaGVzIUgifSwid2VsY29tZVRleHQiOiLQl9C00YDQsNCy0YHRgtCy0YPQudGC0LUsINC80L7Qs9GDINGPINGH0LXQvCDRgtC+INC/0L7QvNC+0YfRjD8ifQ==" async defer></script>
     <style>
       iframe#drift-widget {
           left: 24px !important;
