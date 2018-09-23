@@ -1,30 +1,21 @@
 <?php
-
 use App\Mail\TestMail;
 use Illuminate\Support\Facades\Mail;
 
-//One page app START
 
-
-/*Route::get('/', function(){
-    return view('index');
+/*Route::get('/', function () {
+    return view('welcome');
 });*/
 
+Route::get('check-queue', function () {
+    Mail::to('horosh3d@gmail.com')->queue(new TestMail());
+    return 'working';
+});
 
-//One page app END
 
 
 //Auth
 Auth::routes();
 
-
 //BS4 Controller
-
 Route::get('/', 'bs4Controller@index');
-
-
-Route::get('check-queue', function(){
-    Mail::to('adm@ideal.com')->send(new TestMail());
-    return 'Working';
-});
-
