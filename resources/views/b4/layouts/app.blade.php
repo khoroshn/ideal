@@ -5,21 +5,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Price Slider Stylesheets -->
-    <link rel="stylesheet" href="{{asset(env('RES'))}}/vendor/nouislider/nouislider.css">
+    <link rel="stylesheet" href="{{elixir(env('RES'))}}/vendor/nouislider/nouislider.css">
     <!-- Google fonts - Playfair Display-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700">
-    <link rel="stylesheet" href="{{asset(env('RES'))}}/fonts/hkgrotesk/stylesheet.css">
+    <link rel="stylesheet" href="{{elixir(env('RES'))}}/fonts/hkgrotesk/stylesheet.css">
     <!-- owl carousel-->
-    <link rel="stylesheet" href="{{asset(env('RES'))}}/vendor/owl.carousel/assets/owl.carousel.css">
+    <link rel="stylesheet" href="{{elixir(env('RES'))}}/vendor/owl.carousel/assets/owl.carousel.css">
     <!-- Ekko Lightbox-->
-    <link rel="stylesheet" href="{{asset(env('RES'))}}/vendor/ekko-lightbox/ekko-lightbox.css">
+    <link rel="stylesheet" href="{{elixir(env('RES'))}}/vendor/ekko-lightbox/ekko-lightbox.css">
     <!-- RES stylesheet-->
-    <link rel="stylesheet" href="{{asset(env('RES'))}}/css/style.default.css" id="theme-stylesheet">
-    <link id="new-stylesheet" rel="stylesheet" href="{{asset(env('RES'))}}/css/style.red.css">
+    <link rel="stylesheet" href="{{elixir(env('RES'))}}/css/style.default.css" id="theme-stylesheet">
+    <link id="new-stylesheet" rel="stylesheet" href="{{elixir(env('RES'))}}/css/style.red.css">
     <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="{{asset(env('RES'))}}/css/custom.css">
+    <link rel="stylesheet" href="{{elixir(env('RES'))}}/css/custom.css">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="{{asset(env('RES'))}}/img/favicon.png">
+    <link rel="shortcut icon" href="{{elixir(env('RES'))}}/img/favicon.png">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
