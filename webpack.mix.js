@@ -5,6 +5,16 @@ if (process.env.npm_lifecycle_event !== 'hot') {
     mix.version()
 }
 
+
+const options = {
+    filename: 'mix-manifest.json',
+    transform: function (assets) {
+        // todo.
+    }
+};
+
+new WebpackLaravelMixManifest(options);
+
 const CompressionPlugin = require("compression-webpack-plugin");
 //const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 

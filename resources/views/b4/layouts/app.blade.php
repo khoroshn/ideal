@@ -4,6 +4,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Ideal</title>
+    <link rel="manifest" href="mix-manifest.json">
     <!-- Price Slider Stylesheets -->
     <link rel="stylesheet" href="{{elixir(env('RES'))}}/vendor/nouislider/nouislider.css">
     <!-- Google fonts - Playfair Display-->
@@ -121,6 +123,10 @@
       var basePath = 'sell/'
     </script>
     <script src="{{asset(env('RES'))}}/js/theme.js"></script>
+
+  <script type="text/javascript">
+  document.addEventListener('touchstart', onTouchStart, {passive: true});
+  </script>
 
     <!-- Start of Async Drift Code -->
     <script>
