@@ -1,19 +1,5 @@
-require('./bootstrap');
-import React, {Component} from 'react';
+    import React, { Component } from 'react'
+    import ReactDOM from 'react-dom'
+   import { BrowserRouter, Route, Switch } from 'react-router-dom'
+    //import Header from './Header'
 
-//import './App.less';
-
-import Layout from './components/Layout/Layout';
-import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
-
-class App extends Component {
-	render () {
-		return (
-			<Layout>
-				<BurgerBuilder />
-			</Layout>
-		)
-	}
-}
-
-export default App;

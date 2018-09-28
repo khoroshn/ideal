@@ -5,11 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Ideal</title>
-    <link rel="manifest" href="mix-manifest.json">
+    
     <!-- Price Slider Stylesheets -->
     <link rel="stylesheet" href="{{elixir(env('RES'))}}/vendor/nouislider/nouislider.css">
     <!-- Google fonts - Playfair Display-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700">
+
     <link rel="stylesheet" href="{{elixir(env('RES'))}}/fonts/hkgrotesk/stylesheet.css">
     <!-- owl carousel-->
     <link rel="stylesheet" href="{{elixir(env('RES'))}}/vendor/owl.carousel/assets/owl.carousel.css">
@@ -124,9 +125,7 @@
     </script>
     <script src="{{asset(env('RES'))}}/js/theme.js"></script>
 
-  <script type="text/javascript">
-  document.addEventListener('touchstart', onTouchStart, {passive: true});
-  </script>
+<script src="{{asset('/js/app.js')}}"></script>
 
     <!-- Start of Async Drift Code -->
     <script>
@@ -165,5 +164,21 @@
           right: auto !important;
       }
     </style>
+
+  <script type="text/javascript">
+  
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+  </script>
+
 </body>
 </html>

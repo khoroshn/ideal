@@ -6,19 +6,29 @@ if (process.env.npm_lifecycle_event !== 'hot') {
 }
 
 
-const options = {
-    filename: 'mix-manifest.json',
-    transform: function (assets) {
-        // todo.
-    }
-};
 
-new WebpackLaravelMixManifest(options);
+
 
 const CompressionPlugin = require("compression-webpack-plugin");
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+
+const workboxPlugin = require('workbox-webpack-plugin');
 //const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
-mix.react('resources/assets/js/index.js', 'public/js')
+if (mix.inProduction()) {
+    mix.webpackConfig({
+        plugins: [
+            new workboxPlugin.InjectManifest({
+                swSrc: 'public/sw-offline.js', // more control over the caching
+                swDest: 'sw.js', // the service-worker file name
+                importsDirectory: 'service-worker' // have a dedicated folder for sw files
+            })
+        ]
+    })
+}
+
+
+mix.react('resources/assets/js/app.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css')
     .webpackConfig({
         'output': {
@@ -124,6 +134,29 @@ mix.react('resources/assets/js/index.js', 'public/js')
                 'test': /\.js$|\.css$|\.html$/,
                 'threshold': 10240,
                 'minRatio': 0.8
-            })
+            }),
+            new SWPrecacheWebpackPlugin({
+		        cacheId: 'pwa',
+		        filename: 'service-worker.js',
+		        staticFileGlobs: ['public/**/*.{css,eot,svg,ttf,woff,woff2,js,html}'],
+		        minify: true,
+		        stripPrefix: 'public/',
+		        handleFetch: true,
+		        dynamicUrlToDependencies: {
+		            '/': ['resources/views/welcome.blade.php']
+		        },
+		        staticFileGlobsIgnorePatterns: [/\.map$/, /mix-manifest\.json$/, /manifest\.json$/, /service-worker\.js$/],
+		        runtimeCaching: [
+		            {
+		                urlPattern: /^https:\/\/fonts\.googleapis\.com\//,
+		                handler: 'cacheFirst'
+		            },
+		            {
+		                urlPattern: /^https:\/\/www\.thecocktaildb\.com\/images\/media\/drink\/(\w+)\.jpg/,
+		                handler: 'cacheFirst'
+		            }
+		        ],
+		        importScripts: ['./js/push_message.js']
+		    })
         ]
     });
