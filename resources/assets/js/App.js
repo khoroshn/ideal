@@ -1,5 +1,7 @@
-    import React, { Component } from 'react'
-    import ReactDOM from 'react-dom'
-   import { BrowserRouter, Route, Switch } from 'react-router-dom'
-    //import Header from './Header'
+//import '../../../dist/css/style.red.css';
+require('bootstrap');
 
+
+// if ('serviceWorker' in navigator) {
+//     navigator.serviceWorker.register('/sw.js')
+// }
