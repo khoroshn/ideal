@@ -4,24 +4,10 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Ideal</title>
+    <title>Ideal-garments</title>
     <!-- All app Stylesheets -->
     <link rel="stylesheet" href="{{elixir(env('RES'))}}/build/css/all.css">
-    <!-- Price Slider Stylesheets -->
-<!--     <link rel="stylesheet" href="{{elixir(env('RES'))}}/vendor/nouislider/nouislider.css"> -->
-    <!-- Google fonts - Playfair Display-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700">
-
-<!--     <link rel="stylesheet" href="{{elixir(env('RES'))}}/fonts/hkgrotesk/stylesheet.css"> -->
-    <!-- owl carousel-->
-<!--     <link rel="stylesheet" href="{{elixir(env('RES'))}}/vendor/owl.carousel/assets/owl.carousel.css"> -->
-    <!-- Ekko Lightbox-->
-<!--     <link rel="stylesheet" href="{{elixir(env('RES'))}}/vendor/ekko-lightbox/ekko-lightbox.css"> -->
-    <!-- RES stylesheet-->
-<!--     <link rel="stylesheet" href="{{elixir(env('RES'))}}/css/style.default.css" id="theme-stylesheet"> -->
-<!--     <link id="new-stylesheet" rel="stylesheet" href="{{elixir(env('RES'))}}/css/style.red.css"> -->
-    <!-- Custom stylesheet - for your changes-->
-<!--     <link rel="stylesheet" href="{{elixir(env('RES'))}}/css/custom.css"> -->
+    <link href="{{mix('css/app.css') }}" rel="stylesheet">
     <!-- Favicon-->
     <link rel="shortcut icon" href="{{elixir(env('RES'))}}/img/favicon.png">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
@@ -110,12 +96,6 @@
       // pls don't forget to change to your domain :)
       injectSvgSprite('{{asset(env('RES'))}}/icons/orion-svg-sprite.svg'); 
       
-    </script>
-
-    
-
-    <script>
-      var basePath = 'sell/'
     </script>
 
     <script src="{{asset('/sell/build/js/all.js')}}"></script>

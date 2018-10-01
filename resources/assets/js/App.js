@@ -1,7 +1,6 @@
-//import '../../../dist/css/style.red.css';
-require('bootstrap');
+import 'bootstrap'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import '@fortawesome/free-solid-svg-icons'
 
-
-// if ('serviceWorker' in navigator) {
-//     navigator.serviceWorker.register('/sw.js')
-// }
+//library.add(faStroopwafel)

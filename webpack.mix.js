@@ -1,31 +1,31 @@
 let mix = require('laravel-mix');
 var path = require("path");
 
-if (process.env.npm_lifecycle_event !== 'hot') {
+/*if (process.env.npm_lifecycle_event !== 'hot') {
     mix.version()
 }
+*/
 
 
 
 
-
-const CompressionPlugin = require("compression-webpack-plugin");
+//onst CompressionPlugin = require("compression-webpack-plugin");
 //const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 //const workboxPlugin = require('workbox-webpack-plugin');
 //const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
-if (mix.inProduction()) {
-    mix.webpackConfig({
-        plugins: [
-            new workboxPlugin.InjectManifest({
-                swSrc: 'public/sw-offline.js', // more control over the caching
-                swDest: 'sw.js', // the service-worker file name
-                importsDirectory: 'service-worker' // have a dedicated folder for sw files
-            })
-        ]
-    })
-}
+// if (mix.inProduction()) {
+//     mix.webpackConfig({
+//         plugins: [
+//             new workboxPlugin.InjectManifest({
+//                 swSrc: 'public/sw-offline.js', // more control over the caching
+//                 swDest: 'sw.js', // the service-worker file name
+//                 importsDirectory: 'service-worker' // have a dedicated folder for sw files
+//             })
+//         ]
+//     })
+// }
 
 
 mix.react('resources/assets/js/app.js', 'public/js')
@@ -55,102 +55,37 @@ mix.react('resources/assets/js/app.js', 'public/js')
                 'resources/dist/js/*.js'
             ], 
         'public/sell/build/js/all.js')
-    .sourceMaps()
     .webpackConfig({
-        'output': {
-            'publicPath': "https://ideal.loc/"
-        },
-        'devServer': {
-            historyApiFallback: true,
-            'contentBase': path.join(__dirname, 'public'),
-            'hot': true,
-            'inline': true,
-            'https': true,
-            'port': 8181,
-            'compress': false,
-            'disableHostCheck': true, 
-            'headers': { "Access-Control-Allow-Origin": "*" },
-            'watchOptions': {
-                'exclude': [/bower_components/, /node_modules/]
-            }
-        },
-        'node': {
-
-            'fs': "empty",
-
-            'module': "empty"
-
-        },
-        'devtool': "source-map",
-        "module": {
-            "rules": [
+        module: {
+            rules: [
                 {
-                    "test": /\.js?$/,
-                    "exclude": /node_modules/,
-                    "use": {
-                        "loader": "babel-loader",
-                        "options": {
-                            "presets": [
-                                'es2015',
-                                'react'
-                            ],
-                            "plugins": [
-                                'transform-decorators-legacy',
-                                'transform-class-properties',
-                                "transform-object-rest-spread"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "test": /\.jsx?$/,
-                    "exclude": /node_modules/,
-                    "use": {
-                        "loader": "babel-loader",
-                        "options": {
-                            "presets": [
-                                'es2015',
-                                'react',
-                                "stage-3"
-                            ],
-                            "plugins": [
-                                'transform-class-properties',
-                                'transform-react-jsx',
-                                'transform-object-rest-spread',
-                                "react-hot-loader/babel"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "test": /\.less$/,
-                    "exclude": /node_modules/,
-                    "use": [
-                        "less-loader"
+                    test: /\.less$/,
+                    exclude: /node_modules/,
+                    use: [
+                        'less-loader'
                     ]
                 },
                 {
-                    "test": /\.sass$/,
-                    "exclude": /node_modules/,
-                    "use": [
+                    test: /\.sass$/,
+                    exclude: /node_modules/,
+                    use: [
                         'style-loader',
                         'css-loader',
                         'resolve-url',
-                        "sass-loader"
+                        'sass-loader'
                     ]
+                },
+                {
+                    test: /\.(js|jsx)$/,
+                    exclude: /(node_modules|bower_components)/,
+                    use: [
+                        'babel-loader'
+                    ]
+
                 }
             ]
-        },
-        'plugins': [
-            new CompressionPlugin({
-                'asset': "[path].gz[query]",
-                'algorithm': "gzip",
-                'test': /\.js$|\.css$|\.html$/,
-                'threshold': 10240,
-                'minRatio': 0.8
-            }),
+        }
 
-        ]
     });
 
 
